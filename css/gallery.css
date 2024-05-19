@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Espaçamento entre os itens da galeria */
+    justify-content: center;
+    max-width: 1000px; /* Ajuste conforme necessário */
+}
+
+.gallery-item {
+    width: calc(25% - 10px); /* Quatro itens por linha com espaçamento de 10px */
+    margin-bottom: 10px;
+    overflow: hidden; /* Garante que o zoom não ultrapasse o contêiner */
+    border-radius: 8px; /* Opcional: arredonda os cantos dos itens da galeria */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 180px; /* Altura menor para todas as imagens */
+    object-fit: cover; /* Ajusta a imagem para preencher o contêiner mantendo a proporção */
+    display: block;
+    transition: transform 0.3s ease-in-out; /* Adiciona a transição suave */
+}
+
+.gallery-item img:hover {
+    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .gallery-item {
+        width: calc(50% - 10px); /* Dois itens por linha em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-item {
+        width: 100%; /* Um item por linha em telas muito pequenas */
+    }
+}
